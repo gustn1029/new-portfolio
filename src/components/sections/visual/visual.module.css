@@ -1,5 +1,5 @@
 .visualWrap {
-  background-color: rgba(23, 37, 84, 0.9);
+  background-color: rgba(35, 38, 45, 0.9);
 }
 
 .visualWrap::before {
@@ -7,6 +7,6 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: url(../../assets/visual_img.jpg) no-repeat top center/cover;
+  background: url(../../../assets/visual_img.jpg) no-repeat top center/cover;
   position: absolute;
 }
