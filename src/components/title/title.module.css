@@ -1,0 +1,21 @@
+
+.title span::before,
+.title::after {
+    content: "";
+}
+.title span::before {
+    width: 6px; height: 6px;
+    border-radius: 100%;
+    background-color: #a8a29e;
+    position: absolute;
+    right: 0;
+    transform: translateX(110px);
+    bottom: 3px;
+}
+.title::after {
+    width: 100px;
+    display: block;
+    height: 2px;
+    background-color: #78716c;
+    margin-bottom: 5px;
+}
