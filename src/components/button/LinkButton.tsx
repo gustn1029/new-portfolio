@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import { ButtonStyleEnum, ButtonStyleList } from "../../types/enum/ButtonEnum";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface LinkButtonProps {
   children: React.ReactNode;
   buttonStyle?: ButtonStyleEnum;
-  type?: "button" | "submit" | "reset" | undefined;
+  href: string;
   buttonClassName?: string;
 }
 
@@ -16,25 +17,24 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
  * @param props 버튼 태그에서 사용하는 기능 props로 전달하여 사용 가능
  * @returns
  */
-const Button = ({
+const LinkButton = ({
   children,
   buttonStyle = ButtonStyleEnum.PRIMARY,
-  type = "button",
+  href,
   buttonClassName,
   ...props
-}: ButtonProps) => {
-  
+}: LinkButtonProps) => {
   return (
-    <button
-      type={type}
-      className={`px-[20px] py-[10px] rounded-[10px] transition-all duration-300 ${ButtonStyleList[buttonStyle].value} ${
-        buttonClassName ? buttonClassName : ""
-      }`}
+    <Link
+      to={href}
+      className={`px-[20px] py-[10px] rounded-[10px] transition-all duration-300 ${
+        ButtonStyleList[buttonStyle].value
+      } ${buttonClassName ? buttonClassName : ""}`}
       {...props}
     >
       {children}
-    </button>
+    </Link>
   );
 };
 
-export default Button;
+export default LinkButton;
