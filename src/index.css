@@ -27,10 +27,6 @@ em {
   .inner {
     @apply max-w-[1200px] w-full px-[20px] mx-auto;
   }
-
-  .s-only {
-    @apply w-0 h-0 overflow-hidden absolute left-[-9999px] top-[-9999px] indent-[-9999px] text-[0] leading-[0];
-  }
 }
 
 @layer utilities {
