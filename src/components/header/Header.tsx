@@ -8,8 +8,8 @@ const Header = () => {
   const [isFlying, setIsFlying] = useState<boolean>(false);
   const navItem: NavItem[] = [
     { text: "About", href: "#about" },
-    { text: "Skill", href: "#skill" },
-    { text: "Project", href: "#project" },
+    { text: "Skills", href: "#skills" },
+    { text: "Projects", href: "#projects" },
   ];
 
   useEffect(() => {
