@@ -3,9 +3,12 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      backgroundImage: {
+        "warm-gradient": "linear-gradient(135deg, #FFA726, #FFCC74)",
+      },
       colors: {
         primary: "#eab308",
-        point: "#FFCC74"
+        point: "#FFCC74",
       },
       maskImage: {
         "fade-to-transparent":
