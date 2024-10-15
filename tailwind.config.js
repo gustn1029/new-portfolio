@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "warm-gradient": "linear-gradient(135deg, #FFA726, #FFCC74)",
+        'fade-sides': 'linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))',
       },
       colors: {
         primary: "#eab308",
@@ -12,7 +13,7 @@ module.exports = {
       },
       maskImage: {
         "fade-to-transparent":
-          "linear-gradient(to top, black 70%, transparent 100%)",
+          "linear-gradient(to right, transparent 100%, black 30%, black 70%, transparent 100%)",
       },
     },
   },
