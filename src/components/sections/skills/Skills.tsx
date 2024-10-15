@@ -31,7 +31,7 @@ const Skills = () => {
     {
       icon: <SiTailwindcss className="text-[#06B6D4]" />,
       skillName: "Tailwind CSS",
-      proficiencyPercentage: 80
+      proficiencyPercentage: 75
     },
     {
       icon: <FaSass className="text-[#CC6699]" />,
@@ -41,17 +41,17 @@ const Skills = () => {
     {
       icon: <RiJavascriptFill className="text-[#F7DF1E]" />,
       skillName: "JavaScript",
-      proficiencyPercentage: 80
+      proficiencyPercentage: 75
     },
     {
       icon: <BiLogoTypescript className="text-[#3178C6]" />,
       skillName: "TypeScript",
-      proficiencyPercentage: 75
+      proficiencyPercentage: 70
     },
     {
       icon: <FaReact className="text-[#61DAFB]" />,
       skillName: "React",
-      proficiencyPercentage: 75
+      proficiencyPercentage: 70
     },
     {
       icon: <RiNextjsFill className="text-black" />,
