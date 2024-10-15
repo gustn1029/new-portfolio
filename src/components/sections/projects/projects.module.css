@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'SMUSnowflake-Bold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2409-2@1.0/SMUSnowflake-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.projectTitle {
+    font-family: 'SMUSnowflake-Bold';
+}
+
+.projectImage::before,
+.projectImage::after {
+    content: "";
+    display: block;
+    
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.projectImage::before {
+    width: 40%;
+    left: 0;
+    background: linear-gradient(to right, #23262D, transparent 100%);
+}
+
+.projectImage::after {
+    width: 20%;
+    right: 0;
+    background: linear-gradient(to left, #23262D, transparent 100%);
+}
