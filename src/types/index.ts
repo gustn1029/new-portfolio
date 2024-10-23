@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { FieldErrors } from "react-hook-form";
+import { FieldError, FieldErrors, UseFormRegisterReturn } from "react-hook-form";
 
 export interface CareerItem {
   period: string;
@@ -18,13 +18,20 @@ export interface ProjectOption {
 }
 
 export interface ContactMailData {
-  from_email: string;
+  from_name: string;
   message: string;
+  phone_number: string;
 }
 
 export interface LabelLayoutProps {
   label: string;
-  children: ReactNode;
-  errors: FieldErrors<ContactMailData>;
+  children?: ReactNode;
   inputId: string;
+}
+
+export interface LabelInputProps extends LabelLayoutProps {
+  register: UseFormRegisterReturn<string>;
+  type?: "text" | "number" | "date" | "password" | "file" | "email";
+  placeholder?: string;
+  errors?: FieldError;
 }
