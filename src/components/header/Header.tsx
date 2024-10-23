@@ -10,6 +10,7 @@ const Header = () => {
     { text: "About", href: "#about" },
     { text: "Skills", href: "#skills" },
     { text: "Projects", href: "#projects" },
+    { text: "Contact", href: "#contact" },
   ];
 
   useEffect(() => {
