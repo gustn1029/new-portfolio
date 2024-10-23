@@ -16,7 +16,7 @@ const Visual = () => {
           <span className="text-point">Your next</span> frontend developer
         </p>
       </div>
-      <LinkButton href="#Project" buttonClassName="">
+      <LinkButton href="#projects" buttonClassName="">
         Previous Projects
       </LinkButton>
     </section>
