@@ -1,12 +1,6 @@
 import { Fragment } from "react";
 import CareerListItem from "./CareerListItem";
-
-export interface CareerItem {
-  period: string;
-  company?: string;
-  education?: string;
-  desc: string[];
-}
+import { CareerItem } from "../../../../types";
 
 export interface CareerList {
   career: string;

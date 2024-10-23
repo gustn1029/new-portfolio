@@ -1,4 +1,4 @@
-import { CareerItem } from "./Career";
+import { CareerItem } from "../../../../types";
 
 const CareerListItem = ({ period, company, education, desc }: CareerItem) => {
   return (
