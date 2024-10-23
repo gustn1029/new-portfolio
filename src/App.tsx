@@ -1,18 +1,16 @@
-import Header from "./components/header/Header";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./pages/main/Main";
+import RootLayout from "./components/layouts/RootLayout";
 
 function App() {
-  return (
-    <>
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Main />} />
-        </Routes>
-      </Router>
-    </>
-  );
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <RootLayout />,
+      children: [{ path: "/", element: <Main /> }],
+    },
+  ]);
+  return <RouterProvider router={router} />;
 }
 
 export default App;
