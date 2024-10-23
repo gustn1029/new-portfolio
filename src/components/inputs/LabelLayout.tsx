@@ -1,14 +1,10 @@
 import { LabelLayoutProps } from '../../types'
-import ErrorToolTip from '../tooltip/ErrorToolTip'
 
-const LabelLayout = ({children, errors, inputId, label}:LabelLayoutProps) => {
+const LabelLayout = ({children, inputId, label}:LabelLayoutProps) => {
   return (
-    <label className={`relative block`} htmlFor={inputId}>
-        <span>{label}</span>
+    <label className={`relative flex flex-col gap-[5px]`} htmlFor={inputId}>
+        <span className='text-gray-300 ml-[20px]'>{label}</span>
         {children}
-        {errors && errors.message && errors.message.message && (
-            <ErrorToolTip message={errors.message.message} />
-          )}
     </label>
   )
 }

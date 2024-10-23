@@ -1,8 +1,6 @@
-import React from 'react'
-
 const ErrorToolTip = ({message}:{message: string}) => {
   return (
-    <em className='absolute text-red-500 lef-[5px] bottom-0 text-[0.8rem]'>{message}</em>
+    <em className='absolute text-red-500 left-[20px] bottom-[-25px] text-[0.85rem]'>{message}</em>
   )
 }
 
