@@ -6,7 +6,7 @@ const LabelInput = (props: LabelInputProps) => {
   return (
     <LabelLayout {...props}>
       <input
-        className="block w-full py-[10px] px-[20px] rounded-[30px]"
+        className="block w-full py-[10px] px-[20px] rounded-[30px] bg-[#23262D] text-gray-400 outline-none"
         type={props.type || "text"}
         id={props.inputId}
         {...props.register}

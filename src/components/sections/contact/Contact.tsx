@@ -17,6 +17,8 @@ import { RiNotionFill } from "react-icons/ri";
 import LabelInput from "../../inputs/labelInput/LabelInput";
 import ErrorToolTip from "../../tooltip/ErrorToolTip";
 
+import styles from "./contact.module.css";
+
 interface ContactList {
   path: string;
   icon: JSX.Element;
@@ -71,21 +73,24 @@ const Contact = () => {
     <SectionWrap id="contact">
       <Title title="Contact" desc="많은 관심 부탁드립니다." />
       <div className="flex gap-[60px] justify-between items-center">
-        <ul className="w-[calc(50%-30px)] flex gap-[30px] items-center justify-center">
-          {contactList.map((contact) => (
-            <li
-              key={`contact__${contact.title}`}
-              className={`${
-                contact.title === "GitHub" ? "text-[4rem]" : "text-[5rem]"
-              } text-gray-400 hover:text-white transition-color`}
-            >
-              <a href={contact.path} target="_blank">
-                {contact.icon}
-                <span className="sr-only">{contact.title}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
+        <section className={`w-[calc(50%-30px)] relative ${styles.listWrap}`}>
+          <h3 className="sr-only">GitHub, Notion 정보</h3>
+          <ul className="flex gap-[30px] items-center justify-center">
+            {contactList.map((contact) => (
+              <li
+                key={`contact__${contact.title}`}
+                className={`${
+                  contact.title === "GitHub" ? "text-[4rem]" : "text-[5rem]"
+                } text-gray-400 hover:text-white transition-color`}
+              >
+                <a href={contact.path} target="_blank">
+                  {contact.icon}
+                  <span className="sr-only">{contact.title}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
         <form
           ref={formRef}
           onSubmit={handleSubmit(onSubmit)}
@@ -117,7 +122,7 @@ const Contact = () => {
           />
           <LabelLayout inputId="message" label="내용">
             <textarea
-              className="rounded-[20px] resize-none min-h-[200px] p-[20px]"
+              className="rounded-[20px] resize-none min-h-[200px] p-[20px] bg-[#23262D] text-gray-400 outline-none"
               placeholder="내용을 입력해 주세요."
               id="message"
               {...register("message", {
@@ -143,7 +148,7 @@ const Contact = () => {
           </LabelLayout>
           <input
             className={`block py-[10px] px-[20px] text-white cursor-pointer ${
-              ButtonStyleList[ButtonStyleEnum.PRIMARY].value
+              ButtonStyleList[ButtonStyleEnum.SUBMIT].value
             } rounded-[10px]`}
             type="submit"
             value="전송하기"

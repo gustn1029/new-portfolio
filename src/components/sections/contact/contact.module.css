@@ -1,0 +1,22 @@
+.listWrap::before {
+  content: "";
+  display: block;
+  margin: 0 auto 30px;
+  background: url(../../../assets/images/contact/contact_image.png) no-repeat
+    center center/contain;
+}
+
+.listWrap::before,
+.listWrap::after {
+    content: "";
+    max-width: 360px;
+    width: 100%;
+    padding-bottom: 45%;
+}
+
+.listWrap::after {
+    position: absolute;
+    left: 50%; top: 0;
+    background-color: rgba(35, 38, 45, 0.3);
+    transform: translateX(-50%);
+}
