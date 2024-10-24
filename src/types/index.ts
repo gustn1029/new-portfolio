@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { FieldError, FieldErrors, UseFormRegisterReturn } from "react-hook-form";
+import { FieldError, UseFormRegisterReturn } from "react-hook-form";
 
 export interface CareerItem {
   period: string;
