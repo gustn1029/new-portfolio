@@ -12,5 +12,5 @@ export const ButtonStyleList = [
   },
   { type: ButtonStyleEnum.NORMAL, value: "" },
   { type: ButtonStyleEnum.DANGER, value: "bg-[#ef4444] text-white" },
-  { type: ButtonStyleEnum.SUBMIT, value: "bg-gray-700 text-gray-500" },
+  { type: ButtonStyleEnum.SUBMIT, value: "bg-gray-700 text-gray-500 hover:bg-gray-800 transition-all" },
 ];

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { ButtonStyleEnum, ButtonStyleList } from "../../types/enum/ButtonEnum";
 
 interface LinkButtonProps {
@@ -25,15 +24,15 @@ const LinkButton = ({
   ...props
 }: LinkButtonProps) => {
   return (
-    <Link
-      to={href}
+    <a
+      href={href}
       className={`px-[20px] py-[10px] rounded-[10px] transition-all duration-300 ${
         ButtonStyleList[buttonStyle].value
       } ${buttonClassName ? buttonClassName : ""}`}
       {...props}
     >
       {children}
-    </Link>
+    </a>
   );
 };
 
