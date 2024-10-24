@@ -8,7 +8,7 @@ const Main = () => {
   return (
     <>
       <Visual />
-      <main className="flex flex-col gap-[100px]">
+      <main className="flex flex-col gap-[100px] mb-[100px]">
         <About />
         <Skills />
         <Projects />
