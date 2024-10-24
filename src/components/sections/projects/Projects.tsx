@@ -11,6 +11,32 @@ import timeFlowImage from "../../../assets/images/project/project-timeflow.png";
 const Projects = () => {
   const projectOptionList: ProjectOption[] = [
     {
+      title: "TimeFlow",
+      desc: "[EST] 프론트엔드 양성자 과정 팀 프로젝트로 진행한 일정 관리 앱",
+      image: timeFlowImage,
+      path: "https://time-flow-app.vercel.app/",
+      projectInfo: [
+        "다양한 기능에 필요한 CRUD 개발",
+        "React Hook Form을 사용하여 폼의 데이터를 관리하고 유효성 검사를 수행",
+        "react-toastify 라이브러리로 상태 메시지 출력",
+        "TansTack Query를 활용하여 효율적인 데이터 패칭과 상태 관리를 구현",
+        "파이어베이스를 활용한 구글 인증 로그인, 회원가입 기능 구현",
+        "react-calendar 라이브러리를 사용하여 캘린더 기능 구현",
+        "Framer Motion 라이브러리를 활용하여 애니메이션 구현",
+      ],
+      skills: [
+        "React",
+        "TypeScript",
+        "Sass",
+        "TanStack Query",
+        "Firebase",
+        "react-toastify",
+        "react-calendar",
+        "React Hook Form",
+        "Framer Motion",
+      ],
+    },
+    {
       title: "강원특별자치도 통합건강증진사업지원단",
       desc: "전자정부프레임워크를 적용하여 웹 사이트를 제작하였습니다.",
       image: gangwonImage,
@@ -72,32 +98,6 @@ const Projects = () => {
         "Next-auth",
         "react-toastify",
         "react-chartjs-2",
-      ],
-    },
-    {
-      title: "TimeFlow",
-      desc: "[EST] 프론트엔드 양성자 과정 팀 프로젝트로 진행한 일정 관리 앱",
-      image: timeFlowImage,
-      path: "https://time-flow-app.vercel.app/",
-      projectInfo: [
-        "다양한 기능에 필요한 CRUD 개발",
-        "React Hook Form을 사용하여 폼의 데이터를 관리하고 유효성 검사를 수행",
-        "react-toastify 라이브러리로 상태 메시지 출력",
-        "TansTack Query를 활용하여 효율적인 데이터 패칭과 상태 관리를 구현",
-        "파이어베이스를 활용한 구글 인증 로그인, 회원가입 기능 구현",
-        "react-calendar 라이브러리를 사용하여 캘린더 기능 구현",
-        "Framer Motion 라이브러리를 활용하여 애니메이션 구현"
-      ],
-      skills: [
-        "React",
-        "TypeScript",
-        "Sass",
-        "TanStack Query",
-        "Firebase",
-        "react-toastify",
-        "react-calendar",
-        "React Hook Form",
-        "Framer Motion"
       ],
     },
   ];
