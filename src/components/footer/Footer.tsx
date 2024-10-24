@@ -7,7 +7,7 @@ const Footer = () => {
         <strong className="text-[1.3rem] text-gray-600">
             KHS Portfolio
         </strong>
-        <p className="text-gray-600 text-[0.8rem]">
+        <p className="text-gray-700 text-[0.8rem]">
           Copyright ⓒ 2024 KimHyeonSoo all rights reserved.
         </p>
         <ul>
