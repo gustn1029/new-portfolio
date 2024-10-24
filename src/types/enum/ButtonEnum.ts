@@ -2,6 +2,7 @@ export enum ButtonStyleEnum {
   PRIMARY,
   NORMAL,
   DANGER,
+  SUBMIT,
 }
 
 export const ButtonStyleList = [
@@ -11,4 +12,5 @@ export const ButtonStyleList = [
   },
   { type: ButtonStyleEnum.NORMAL, value: "" },
   { type: ButtonStyleEnum.DANGER, value: "bg-[#ef4444] text-white" },
+  { type: ButtonStyleEnum.SUBMIT, value: "bg-gray-700 text-gray-500" },
 ];
