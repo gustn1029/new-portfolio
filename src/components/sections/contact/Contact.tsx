@@ -13,7 +13,7 @@ import {
 import Title from "../../title/Title";
 
 import { FaGithub } from "react-icons/fa6";
-import { RiNotionFill } from "react-icons/ri";
+import { SiVelog } from "react-icons/si";
 import LabelInput from "../../inputs/labelInput/LabelInput";
 import ErrorToolTip from "../../tooltip/ErrorToolTip";
 
@@ -35,8 +35,8 @@ const Contact = () => {
       title: "GitHub",
     },
     {
-      path: "https://www.notion.so/128bd9caac2a804c8212cd287e7a2551?pvs=12",
-      icon: <RiNotionFill />,
+      path: "https://velog.io/@gustn1029/posts",
+      icon: <SiVelog />,
       title: "Notion",
     },
   ];
@@ -79,9 +79,7 @@ const Contact = () => {
             {contactList.map((contact) => (
               <li
                 key={`contact__${contact.title}`}
-                className={`${
-                  contact.title === "GitHub" ? "text-[4rem]" : "text-[5rem]"
-                } text-gray-400 hover:text-white transition-color`}
+                className={`text-[4rem] text-gray-400 hover:text-white transition-all`}
               >
                 <a href={contact.path} target="_blank">
                   {contact.icon}
