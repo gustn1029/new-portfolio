@@ -36,7 +36,7 @@ const Contact = () => {
   });
 
   const isInContactView = useInView(contactRef, {
-    margin: "-30px",
+    margin: "-50px",
   });
 
   const contactList: ContactList[] = [
@@ -122,7 +122,7 @@ const Contact = () => {
         ref={contactRef}
         variants={contactVariants}
         initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
+        animate={isInContactView ? "visible" : "hidden"}
       >
         <Title title="Contact" desc="많은 관심 부탁드립니다." />
         <div className="flex gap-[60px] justify-between items-center">
