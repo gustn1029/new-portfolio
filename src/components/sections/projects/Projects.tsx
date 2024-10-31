@@ -2,14 +2,34 @@ import { ProjectOption } from "../../../types";
 import Title from "../../title/Title";
 import SectionWrap from "../SectionWrap";
 import ProjectItem from "./ProjectItem";
+import { motion, useTransform } from "framer-motion";
 
 import gangwonImage from "../../../assets/images/project/project-gangwon.avif";
 import quotationImage from "../../../assets/images/project/project-quotationEasy.avif";
 import cmsImage from "../../../assets/images/project/project-cms.jpg";
 import openMarketImage from "../../../assets/images/project/project-openmarket.png";
 import timeFlowImage from "../../../assets/images/project/project-timeflow.png";
+import { useScrollPosition } from "../../../hooks/useScrollPosition";
+import { useSectionPositionStore } from "../../../store/useSectionPositionStore";
 
 const Projects = () => {
+  const { projects } = useSectionPositionStore();
+
+  
+  const { scrollY } = useScrollPosition(projects ? projects : 0);
+
+  const projectsX = useTransform(
+    scrollY,
+    [projects ? projects / 2 : 0, projects ? projects + 200 : 0],
+    [-100, 0]
+  );
+
+  const projectsOpacity = useTransform(
+    scrollY,
+    [projects ? projects / 2 : 0, projects ? projects + 250 : 0],
+    [0, 1]
+  );
+
   const projectOptionList: ProjectOption[] = [
     {
       title: "OpenMarket",
@@ -22,10 +42,7 @@ const Projects = () => {
         "개인 프로젝트 최우수상 수상",
         "로그인, 회원가입, 메인, 상세, 장바구니, 주문 페이지 개발",
       ],
-      skills: [
-        "JavaScript",
-        "Tailwind CSS",
-      ],
+      skills: ["JavaScript", "Tailwind CSS"],
     },
     {
       title: "TimeFlow",
@@ -118,22 +135,40 @@ const Projects = () => {
       ],
     },
   ];
+
+  const listItemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
   return (
     <SectionWrap id="projects">
-      <Title title="Projects" desc="제가 참여했던 프로젝트를 소개합니다." />
-      <ul className="flex flex-col gap-[30px]">
-        {projectOptionList.map((project) => (
-          <ProjectItem
-            key={`project__${project.title}`}
-            title={project.title}
-            desc={project.desc}
-            image={project.image}
-            path={project.path}
-            projectInfo={project.projectInfo}
-            skills={project.skills}
-          />
-        ))}
-      </ul>
+      <motion.div
+        style={{ x: projectsX, opacity: projectsOpacity }}
+      >
+        <Title title="Projects" desc="제가 참여했던 프로젝트를 소개합니다." />
+        <motion.ul
+          variants={listItemVariants}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col gap-[30px]"
+        >
+          {projectOptionList.map((project, idx) => (
+            <ProjectItem
+              key={`project__${project.title}`}
+              title={project.title}
+              desc={project.desc}
+              image={project.image}
+              path={project.path}
+              projectInfo={project.projectInfo}
+              skills={project.skills}
+              idx={idx}
+            />
+          ))}
+        </motion.ul>
+      </motion.div>
     </SectionWrap>
   );
 };

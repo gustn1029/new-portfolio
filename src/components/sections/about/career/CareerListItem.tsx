@@ -1,8 +1,20 @@
 import { CareerItem } from "../../../../types";
+import { motion } from "framer-motion";
 
 const CareerListItem = ({ period, company, education, desc }: CareerItem) => {
+  const listItemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+      },
+    },
+  };
   return (
-    <dd className="mt-[20px]">
+    <motion.dd className="mt-[20px]" variants={listItemVariants}>
       <div>
         <h4 className="inline-block text-point mr-[20px] mb-[5px]">
           {company ? company : education}
@@ -13,13 +25,13 @@ const CareerListItem = ({ period, company, education, desc }: CareerItem) => {
         {desc.map((text, idx) => (
           <li
             key={`${company || education}_${idx}`}
-            className={`text-gray-400 break-keep ${idx > 0 ? "mt-[3px]":""}`}
+            className={`text-gray-400 break-keep ${idx > 0 ? "mt-[3px]" : ""}`}
           >
             {text}
           </li>
         ))}
       </ul>
-    </dd>
+    </motion.dd>
   );
 };
 

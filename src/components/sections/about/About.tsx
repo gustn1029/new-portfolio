@@ -1,10 +1,22 @@
+import { AnimatePresence, motion, useTransform } from "framer-motion";
 import myImage from "../../../assets/profile_image.png";
 import Title from "../../title/Title";
 import SectionWrap from "../SectionWrap";
 import Career, { CareerList } from "./career/Career";
 import Infomation, { InfoOptionList } from "./Infomation";
+import { useSectionPositionStore } from "../../../store/useSectionPositionStore";
+import { useScrollPosition } from "../../../hooks/useScrollPosition";
 
 const About = () => {
+  const { about } = useSectionPositionStore();
+
+  const { isShow, scrollY } = useScrollPosition(about ? about : 0);
+
+  const sectionOpacity = useTransform(
+    scrollY,
+    [about ? about / 2 - 100 : 0, about ? about : 0],
+    [0, 1]
+  );
   const careerData: CareerList[] = [
     {
       career: "교육",
@@ -32,7 +44,7 @@ const About = () => {
             "기초 개념과 언어 지식을 체계적으로 학습하여 프론트엔드 개발자로 성장할 수 있도록 하는 훈련 과정",
             "HTML,CSS,JAVASCRIPT를 활용하여 오픈마켓 서비스를 구현하는 프로젝트 진행",
             "배운 지식들을 바탕으로 팀으로 협업하여 웹 애플리케이션을 만드는 프로젝트 진행",
-            "훈련 과정 최종 우수수료생 선정, 팀 프로젝트 대상 수상, 개인 프로젝트 최우수상 수상"
+            "훈련 과정 최종 우수수료생 선정, 팀 프로젝트 대상 수상, 개인 프로젝트 최우수상 수상",
           ],
         },
       ],
@@ -76,16 +88,24 @@ const About = () => {
 
   return (
     <SectionWrap id="about" innerClassName="">
-      <Title title="about me" />
-      <section className="flex items-center gap-[60px] mb-[50px]">
-        <img
-          src={myImage}
-          alt="김현수 프로필 이미지"
-          className="rounded-[10%_0_10%_0]"
-        />
-        <Infomation infomationData={infomationList} />
-      </section>
-      <Career careerData={careerData} />
+      <motion.div style={{ opacity: sectionOpacity }}>
+        <Title title="about me" />
+        <section className="flex items-center gap-[60px] mb-[50px]">
+          <img
+            src={myImage}
+            alt="김현수 프로필 이미지"
+            className="rounded-[10%_0_10%_0]"
+          />
+          <Infomation infomationData={infomationList} />
+        </section>
+      </motion.div>
+      <AnimatePresence>
+        {isShow ? (
+          <Career careerData={careerData} key="career" />
+        ) : (
+          <motion.div key="placeholder" className="min-h-[500px]" />
+        )}
+      </AnimatePresence>
     </SectionWrap>
   );
 };
